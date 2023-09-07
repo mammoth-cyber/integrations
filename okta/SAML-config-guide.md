@@ -6,67 +6,55 @@ Configuring your Okta tenant as an IDP to log in to **Mammoth Browser** involves
 Requirements
 ------------
 
-Before you configure Okta identity provider, make sure you have set up a custom domain.
+Before you configure Okta identity provider, follow the guide below to set up a custom **sub-domain**.
 
 Step­-by­-Step Configuration Instructions
 -----------------------------------------
 
 1\. In the Admin Console, go to **Setting > Account Profile.**
 
-2\. Setting up a custom domain in "Tenant Domain URL" is required. Please follow the instructions [Portal Domain Customization](#).
+2\. Setting up a custom sub-domain in "Tenant Domain URL" is required. Please follow the instructions [Portal Domain Customization](#).
 
-3\. Click **\+ IdP** button.
+3\. Go to **Setting > Identity Providers** Click **\+Add** button.
 
 ![](./images/sso/oktaidp.png)
 
-4\. On the **Identity Provider Details page**, select Okta as the Identity Provider.
+4\. On the **Identity Provider Details page**, select **Okta** as the Identity Provider.
 
 ![](./images/sso/selectokta.png)
 
-![](./images/sso/okta.png)
-
 5. Open another browser tab and log in Okta.
 
-6\. Go to **Applications > Applications**, click **Create App Integration**
+6\. Go to **Applications > Applications**, click **Browse App Catalog**
 
-![](./images/sso/okta_saml.png)
+![](./images/sso/okta_browse.png)
 
-7\. In the **Create a new app integration** pop-up window, choose **SAML 2.0**, then click **Next**
+7\. In the **Browse App Integration Catalog** page, search for **Mammoth Enterprise Access Browser**, then select it from the list, then click the **Add Integration** button.
 
-![](./images/sso/popup.png)
+![](./images/sso/okta_search.png)
 
-8\. General Settings: Enter the **App name**, upload the **App logo**, and check the **App visibility**. Click **Next** when you finish.
+![](./images/sso/okta_mammoth_app.png)
+
+8\. General Settings: Customize the **Application label** and the **App visibility** settings. Click **Done** when you finish.
 
 ![](./images/sso/APPName.png)
 
   
 9\. Before you configure SAML, please go to the **Mammoth Browser** Identity Provider Detail page to copy the information you need.
 
-![](./images/sso/copyacs.png)
+10. Continue on the newly added app on Okta:
 
-10. Configure SAML: 
-
-*   Copy **ACS URL** and paste it into the **Single sign on URL** field.
-*   Copy the **Entity ID** and paste it into the **Audience URI (SP Entity ID)** field.
-*   Name ID format: Select **EmailAddress**
-*   Application username: Select **Okta username**
-*   Attribute Statements (Optional)
-    *   Enter "email" and select the name format as **Basic**.
-    *   Enter "user.email" in the **Value** field.
-*   Group Attribute Statements (Optional)
-    *   Enter "groups" and select the name format as **Unspecified**
-    *   Select **Matches regex** and enter ".\*"
-*   Click "Next"
+*   Edit the "SAML 2.0" in "Sign On" option.
+*   Copy the **ACS URL** value from Mammoth IDP page to the Okta app setting.
+*   Copy the **Entity ID** value from Mammoth IDP page to the Okta app setting.
+*   Click "Save"
 
 ![](./images/sso/SAMLconfig.png)
+![](./images/sso/SAMLconfig2.png)
 
-11. Choose your role to Okta, then click **Finish**.
+11\. Download the IdP metadata file and upload it to **Mammoth Browser**.
 
-![](./images/sso/ROLE.png)
-
-12\. Download the IdP metadata file and upload it to **Mammoth Browser**.
-
-*   Scroll down and you will see the **Metadata URL**, copy the URL to a new browser tab, it should show the metadata document.
+*   On the same page, under "SAML 2.0", you should see the **Metadata URL**, copy the URL to a new browser tab, it should show the metadata document.
 *   Save the metadata document (select the page source if your browser has such option) to your disk and take note of the file name.
 
 ![](./images/sso/metadata.png)
@@ -75,20 +63,17 @@ Step­-by­-Step Configuration Instructions
 
 ![](./images/sso/savexml.png)
 
-13. Back to the **Mammoth Browser** and upload the metadata file.
+12. Back to the **Mammoth Browser**
 
-![](./images/sso/uploadsaml.png)
-
+*   Upload the metadata file.
 *   Tick the checkbox of "Enabled" in the Status.
 *   Click "Save"
 
 ![](./images/sso/uploadenable.png)
 
-14. You have successfully added the Okta IdP.
+13. You have successfully added the Okta IdP.
 
-![](./images/sso/successsaml.png)
-
-15\. Assign the Okta IdP to the users who need to access applications from **Mammoth Browser**, to make them able to use their Okta account to log in to **Mammoth Browser**.
+14\. Assign the Okta IdP to the users who need to access applications from **Mammoth Browser**, to make them able to use their Okta account to log in to **Mammoth Browser**.
 
 *   On the Okta, go to **Applications> Applications > Assignments**
 *   Click **Assign > Assign to People**
@@ -103,8 +88,8 @@ Step­-by­-Step Configuration Instructions
 
 ![](./images/sso/assignednew.png)
 
-16. Now you can use your Okta account to log in **Mammoth Browser**.
+15. Now you can use your Okta account to log in **Mammoth Browser**.
 
 ![](./images/sso/success.png)
 
-17. **You can configure the [OKTA SCIM](./SCIM-config-guide.md) to complete the entire IdP setup.**
+16. **You can configure the [OKTA SCIM](./SCIM-config-guide.md) to complete the entire IdP setup.**
