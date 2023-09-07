@@ -11,9 +11,11 @@ Before you configure Okta identity provider, follow the guide below to set up a 
 Step­-by­-Step Configuration Instructions
 -----------------------------------------
 
-1\. In the Admin Console, go to **Setting > Account Profile.**
+1\. In the Admin Console, go to **Setting > Account Profile**
 
-2\. Setting up a custom sub-domain in "Tenant Domain URL" is required. Please follow the instructions [Portal Domain Customization](#).
+2\. Setting up a custom sub-domain in "Tenant Domain URL" is required. After decided, click the "Save" button.
+
+![](./images/sso/customurl.png)
 
 3\. Go to **Setting > Identity Providers** Click **\+Add** button.
 
@@ -76,17 +78,9 @@ Step­-by­-Step Configuration Instructions
 14\. Assign the Okta IdP to the users who need to access applications from **Mammoth Browser**, to make them able to use their Okta account to log in to **Mammoth Browser**.
 
 *   On the Okta, go to **Applications> Applications > Assignments**
-*   Click **Assign > Assign to People**
+*   Click **Assign** and follow the process.
 
 ![](./images/sso/assign.png)
-
-*   Click **Assign** to the account, then click **Done**.![](./images/sso/newassign.png)
-
-*   Enter the User Name, click **Save and Go Back**
-
-![](./images/sso/newname.png)
-
-![](./images/sso/assignednew.png)
 
 15. Now you can use your Okta account to log in **Mammoth Browser**.
 
