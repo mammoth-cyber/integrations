@@ -22,7 +22,9 @@ Mammoth Browser is an enterprise browser. Your organization needs a browser mana
    * General -> Distribution Method -> Prevent backup of app data
    * Managed distribution -> Device Assignments -> Assign Content Purchased in Volume (if you have imported a VPP token)
 1. Click the **Scope** tab and configure the scope of the app.
-1. On the **App Configuration** tab, add the following lines to the **Preferences** field:
+1. On the **App Configuration** tab, add the following lines to the **Preferences** field.
+
+    **Note: replace the placeholder "my-subdomain" with your real value**:
 
     ```xml
     <dict>
